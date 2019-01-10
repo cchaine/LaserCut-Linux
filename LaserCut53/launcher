@@ -1,0 +1,3 @@
+#!/bin/bash
+
+wine C:\\LaserCut53\\LaserCut53_Demo.exe
