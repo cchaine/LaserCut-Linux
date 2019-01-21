@@ -31,11 +31,16 @@ then
     if [ `command -v wine | wc -l` -eq 0 ]
     then
         printf "\n\nInstalling wine...\n\n\n"
-        sudo apt-get install wine-stable winetricks
+        sudo apt-get update
+        sudo apt-get install wine winetricks
         if [ $? -ne 0 ]
         then
-                printf "\n\nWine installation failed...\n\n\n"
-                exit 1
+        		sudo apt-get install wine-stable winetricks
+        		if [ $? -ne 0 ]
+        		then
+					printf "\n\nWine installation failed...\n\n\n"
+                	exit 1
+        		fi
         fi
     fi
 fi
